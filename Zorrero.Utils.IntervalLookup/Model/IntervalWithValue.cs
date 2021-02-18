@@ -42,7 +42,7 @@ namespace Zorrero.Utils.IntervalLookup.Model
             return IntervalResult.CONTAINED;
         }
 
-        private bool Equals(OverlappedIntervalWithValue<T, TK> other)
+        private bool Equals(IntervalWithValue<T, TK> other)
         {
             return EqualityComparer<T>.Default.Equals(Init, other.Init) &&
                    EqualityComparer<T>.Default.Equals(End, other.End) &&
@@ -54,7 +54,7 @@ namespace Zorrero.Utils.IntervalLookup.Model
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
             if (obj.GetType() != GetType()) return false;
-            return Equals((OverlappedIntervalWithValue<T, TK>) obj);
+            return Equals((IntervalWithValue<T, TK>) obj);
         }
 
         public override int GetHashCode()
